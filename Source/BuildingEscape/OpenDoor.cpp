@@ -2,21 +2,15 @@
 
 UOpenDoor::UOpenDoor()
 {
-
 	PrimaryComponentTick.bCanEverTick = true;
-
 }
 
-
-void UOpenDoor::BeginPlay()
-{
+void UOpenDoor::BeginPlay(){
 	Super::BeginPlay();
 
-	
+	actorThatOpens = GetWorld()->GetFirstPlayerController()->GetPawn();
 }
 
-
-// Called every frame
 void UOpenDoor::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
