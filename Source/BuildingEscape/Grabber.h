@@ -8,7 +8,9 @@
 #include "CollisionQueryParams.h"
 #include "GameFramework/Actor.h"
 #include "Components/ActorComponent.h"
+#include "PhysicsEngine/PhysicsHandleComponent.h"
 #include "Grabber.generated.h"
+
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -30,5 +32,12 @@ public:
 
 private:
 	float reach = 100.0f;
+
+	UPhysicsHandleComponent *physicsHandle = nullptr;
+
+	UInputComponent *input = nullptr;
+
+	void Grab();
+	void Released();
 	
 };
